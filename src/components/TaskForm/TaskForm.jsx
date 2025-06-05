@@ -14,7 +14,7 @@ const INITIAL_VALUES = {
 
 const TaskFormSchema = Yup.object({
   name: Yup.string().required("Name is required").min(3).max(50),
-  description: Yup.string().required("Description is required").min(3),
+  description: Yup.string(),
   imageUrl: Yup.string()
     .url("Must be a valid URL")
     .required("Image URL is required"),
