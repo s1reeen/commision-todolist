@@ -1,0 +1,46 @@
+.form {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  padding: 20px;
+  border-radius: 10px;
+  border: 2px solid #a100ff;
+  margin-bottom: 20px;
+}
+
+.label {
+  display: block;
+  margin-bottom: 15px;
+  color: #ffffff;
+}
+
+.span {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.field {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #a100ff;
+  border-radius: 5px;
+  background-color: #333333;
+  color: #ffffff;
+}
+
+.error {
+  color: #ff4444;
+  font-size: 0.8em;
+}
+
+.btn {
+  background-color: #a100ff;
+  color: #ffffff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #8000cc;
+}
