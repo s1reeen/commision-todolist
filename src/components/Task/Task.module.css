@@ -22,8 +22,6 @@
 }
 
 .checkbox {
-  margin-right: 20px;
-  accent-color: #a100ff;
   transform: scale(1.8); /* Larger checkbox */
   transition: transform 0.3s ease;
   z-index: 1;
