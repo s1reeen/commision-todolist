@@ -4,20 +4,25 @@ import module from "./SearchBox.module.css";
 import { selectFilter } from "../../redux/selectors";
 
 const SearchBox = () => {
-    const filter = useSelector(selectFilter);
-    const dispatch = useDispatch();
+  const filter = useSelector(selectFilter);
+  const dispatch = useDispatch();
 
-    const handleChange = (evt) => {
-        const action = setFilter(evt.target.value)
-        dispatch(action)
-    };
+  const handleChange = (evt) => {
+    dispatch(setFilter(evt.target.value));
+  };
 
-    return (
-        <label className={module.label}>
-            <span>Find characters by name</span>
-            <input value={filter} className={module.input} type="text" name="name" onChange={handleChange} />
-        </label>
-    )
-}
+  return (
+    <label className={module.label}>
+      <span>Find tasks by name</span>
+      <input
+        value={filter}
+        className={module.input}
+        type="text"
+        name="name"
+        onChange={handleChange}
+      />
+    </label>
+  );
+};
 
-export default SearchBox
+export default SearchBox;

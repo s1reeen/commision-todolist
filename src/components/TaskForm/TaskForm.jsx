@@ -10,11 +10,12 @@ const INITIAL_VALUES = {
   description: "",
   imageUrl: "",
   priority: "normal",
+  completed: false,
 };
 
 const TaskFormSchema = Yup.object({
   name: Yup.string().required("Name is required").min(3).max(50),
-  description: Yup.string(),
+  description: Yup.string().required("Description is required").min(3),
   imageUrl: Yup.string()
     .url("Must be a valid URL")
     .required("Image URL is required"),
@@ -27,7 +28,7 @@ const TaskForm = () => {
   const dispatch = useDispatch();
 
   const handleSubmit = (values, actions) => {
-    dispatch(addContact(values)); // Changed from addTask
+    dispatch(addContact(values));
     actions.resetForm();
   };
 
@@ -38,43 +39,49 @@ const TaskForm = () => {
       onSubmit={handleSubmit}
     >
       <Form className={module.form}>
-        <label className={module.label}>
-          <span className={module.span}>Character Name</span>
-          <Field type="text" name="name" className={module.field} />
-          <ErrorMessage className={module.error} name="name" component="span" />
-        </label>
-        <label className={module.label}>
-          <span className={module.span}>Description</span>
-          <Field as="textarea" name="description" className={module.field} />
-          <ErrorMessage
-            className={module.error}
-            name="description"
-            component="span"
-          />
-        </label>
-        <label className={module.label}>
-          <span className={module.span}>Image URL</span>
-          <Field type="text" name="imageUrl" className={module.field} />
-          <ErrorMessage
-            className={module.error}
-            name="imageUrl"
-            component="span"
-          />
-        </label>
-        <label className={module.label}>
-          <span className={module.span}>Priority</span>
-          <Field as="select" name="priority" className={module.field}>
-            <option value="normal">Normal</option>
-            <option value="high">High</option>
-            <option value="low">Low</option>
-          </Field>
-          <ErrorMessage
-            className={module.error}
-            name="priority"
-            component="span"
-          />
-        </label>
-        <button type="submit" className={module.btn}>
+        <div className={module.inputGroup}>
+          <label className={module.label}>
+            <span>Character Name</span>
+            <Field type="text" name="name" className={module.input} />
+            <ErrorMessage
+              className={module.error}
+              name="name"
+              component="span"
+            />
+          </label>
+          <label className={module.label}>
+            <span>Description</span>
+            <Field as="textarea" name="description" className={module.input} />
+            <ErrorMessage
+              className={module.error}
+              name="description"
+              component="span"
+            />
+          </label>
+          <label className={module.label}>
+            <span>Image URL</span>
+            <Field type="text" name="imageUrl" className={module.input} />
+            <ErrorMessage
+              className={module.error}
+              name="imageUrl"
+              component="span"
+            />
+          </label>
+          <label className={module.label}>
+            <span>Priority</span>
+            <Field as="select" name="priority" className={module.input}>
+              <option value="normal">Normal</option>
+              <option value="high">High</option>
+              <option value="low">Low</option>
+            </Field>
+            <ErrorMessage
+              className={module.error}
+              name="priority"
+              component="span"
+            />
+          </label>
+        </div>
+        <button type="submit" className={module.submitBtn}>
           Add Task
         </button>
       </Form>

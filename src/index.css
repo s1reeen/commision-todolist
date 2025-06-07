@@ -1,9 +1,64 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
 
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,400;1,400&display=swap");
+
 body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.app {
   font-family: "JetBrains Mono", monospace;
-  font-optical-sizing: auto;
-  font-weight: 600;
-  font-style: normal;
-  background-color: rgb(0, 0, 0);
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  min-height: 100vh;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #ffffff;
+}
+
+.title {
+  font-size: 2.5em;
+  color: #a100ff;
+  text-align: center;
+  margin-bottom: 20px;
+  animation: fadeIn 1s ease-in;
+}
+
+.loader {
+  border: 8px solid #a100ff;
+  border-top: 8px solid #ffd700;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+  margin: 20px auto;
+}
+
+.error {
+  color: #ff4444;
+  text-align: center;
+  margin: 10px 0;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }

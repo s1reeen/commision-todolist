@@ -1,8 +1,12 @@
-.list {
-  list-style: none;
-  padding: 0;
+.taskList {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Increased gap for better separation */
+  width: 100%;
+  max-width: 900px; /* Slightly wider to accommodate larger cards */
+  margin-top: 30px;
 }
 
-.listItem {
-  margin-bottom: 10px;
+.taskCard {
+  animation: fadeIn 0.5s ease-out;
 }

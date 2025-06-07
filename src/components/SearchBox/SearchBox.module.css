@@ -1,9 +1,28 @@
 .label {
   display: flex;
   flex-direction: column;
-  gap: 3px;
+  color: #ffffff;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 20px;
+}
+
+.label span {
+  font-weight: 500;
+  margin-bottom: 5px;
 }
 
 .input {
-  width: 248px;
+  padding: 12px;
+  border: 2px solid #a100ff;
+  border-radius: 8px;
+  background: #333333;
+  color: #ffffff;
+  font-family: "JetBrains Mono", monospace;
+  transition: border-color 0.3s ease;
+}
+
+.input:focus {
+  border-color: #ffd700;
+  outline: none;
 }
