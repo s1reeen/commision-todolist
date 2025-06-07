@@ -3,7 +3,7 @@
   flex-direction: column;
   gap: 30px; /* Increased gap for better separation */
   width: 100%;
-  max-width: 900px; /* Slightly wider to accommodate larger cards */
+  max-width: 800px; /* Slightly wider to accommodate larger cards */
   margin-top: 30px;
 }
 
